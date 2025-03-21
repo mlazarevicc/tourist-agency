@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+:root {
+    --site-color: rgb(222, 98, 54);
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+body {
+    background-color: #F7F5F3;
+    font-family: "Barlow", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: rgb(247, 246, 242);
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    text-decoration: none;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Bree Serif', serif;
+}
+
+.fixed-top {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    width: 100%;
+    display: block;
+}
+
+/* TOP NAV */
+.top-nav {
+    background-color: #fff;
+    color: #092032;
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.top-nav p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.top-nav i, .top-nav span {
+    vertical-align: middle;
+}
+
+.social-icons a {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    color: rgb(255, 255, 255);
+    background-color: var(--site-color);
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 100px;
+}
+
+.social-icons a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(12, 44, 70);
+}
+
+/* NAV */
+.navbar {
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+    padding: 0;
+
+}
+
+.dark {
+    background-color: var(--site-color);
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-brand {
+    color: rgb(247, 246, 242);
+    font-size: 28px;
+    font-weight: 700;
+    padding-left: 15px;
+    padding-right: 10px;
+    border-right-width: 5px;
+}
+
+.navbar-brand:hover, .navbar-brand:active {
+    color: rgb(247, 246, 242);
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color:  #d3d2d2;
+}
+
+.navbar-brand:not(.collapsed) {
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #84878d;
+    padding: 5px 10px;
+}
+
+.bx-search {
+    font-size: 20px;
+}
+
+.btn-brand {
+    border-color: #fff;
+    color: #fff;
+    padding: 8px 26px;
+}
+
+.btn-brand:hover {
+    background-color: #4360b8;
+    border-color: #0d3a9c;
+    color: #fff;
+}
+
+.dropdown-menu li :hover{
+    background-color: #bfc5cb;
+    transition: none;
+}
+
+.search {
+    font-weight: 700;
+}
+
+/* SLIDER */
+
+.dobrodosli {
+    z-index: 1020;
+}
+.dobrodosli h1{
+    font-size: 7em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h5 {
+    color: white;
+    font-size: 250%;
+}
+
+.carousel-indicators button {
+    background-color: rgb(0,0,0,0.7);
+}
+
+#carouselExampleCaptions img {
+    max-height: 40rem;
+}
+
+
+/* CARDS */
+
+#turisticke_agencije {
+    text-decoration: none;
+}
+
+.card {
+    margin: 0 .5em;
+}
+.card ul {
+    list-style: none;
+    padding: 5px 5px;
+}
+
+.card-image {
+    max-width: 100%;
+    height: 16em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-body i , .card-body p{
+    color: black;
+}
+
+.card-body a {
+    text-decoration: none;
+}
+
+.card-body {
+    line-height: 1.4em;
+}
+
+.card-button {
+    background-color: var(--site-color);
+    border-color: var(--site-color);
+}
+
+.card-button:hover{
+    background-color: #f06c3bea;
+    border-color: var(--site-color);
+}
+
+.justify {
+    text-align: justify;
+}
+
+.footer-bg {
+    background-color: rgb(76, 93, 133, 0.8);
+}
+
+/* IZMENA DESTINACIJA */
+
+.background{
+    background-color: rgb(211, 211, 211);
+}
+
+.izmena-ag-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    padding: 2.5rem 2rem;
+}
+
+.izmena-ag-popup .btn {
+    width: 100%;
+}
+
+.img-height img {
+    height: 70vmin;
+}
+
+/* IZMENA AGENCIJA */
+
+.izmena-h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.add-button {
+    background-color: #6677a0;
+    border-color: #4D5D85;
+    color: #fff;
+}
+.add-button:hover {
+    background-color: #4561a3;
+    border-color: #273f7c;
+    color: #fff;
+}
+
+td {
+    padding-left: 0.5em;
+}
+
+#izmena-agencije .card-text {
+    position: absolute;
+    right: 1vw;
+    top: 0.8vh;
+    font-size: 0.8em;
+}
+
+#izmena-agencije .card {
+    height: auto;
+    width: 100%;
+}
+
+#izmena-agencije img {
+    height: 9em;
+}
+
+#izmena-agencije table {
+    font-size: 1em;
+    line-height: 1rem;
+    word-break: break-all;
+}
+#izmena-agencije table th {
+    white-space: nowrap;
+}
+
+#izmena-agencije table tr {
+    margin-bottom: 2px;
+}
+
+.buttons {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vh;
+    z-index: 1020;
+}
+
+footer {
+    margin-top: 3rem;
+}
+footer img{
+    width: 10rem;
+}
+footer a {
+    width: max-content;
+    white-space: nowrap;
+}
+
+.login-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    background-color:#6a6a6ab6;
+    display: none;
+}
+.login-form {
+    width: 60vmin;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    z-index: 9998;
+}
+.reg-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    z-index: 9999;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.login-form .submit-button,
+.reg-form .submit-button {
+    background-color: var(--site-color);
+    border-color: var(--site-color);
+    color: #fff;
+    width: 100%;
+}
+.login-form .submit-button:hover,
+.reg-form .submit-button:hover {
+    background-color: #f06c3bea;
+    border-color: var(--site-color);
+    color: #fff;
+}
+
+.reg-text {
+    color: var(--site-color);
+}
+
+.reg-form .form-label {
+    font-size: 10px;
+    margin-bottom: 3px;
+}
+.reg-form input {
+    height: 2rem;
+    margin-top: 0;
+}
+.reg-form .input-group-text {
+    height: 2rem !important;
+}
+
+.overflow {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 450px;
+}
+
+.deleteEditTd {
+    width: fit-content !important;
+}
+
+.close-button {
+    border: none;
+    background-color:hsla(0, 0%, 100%, 0);
+    font-size: 1rem;
+}
+
+.modal-delete {
+    width: 60%;
+    top: 10%;
+    left: 20%;
+    z-index: 10000;
+}
+.orange-color {
+    background-color: var(--site-color);
+    color: #fff;
+}
+.orange-color:hover {
+    background-color: #f06c3bea;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.tableAgPadding {
+    padding-right: 80px;
+}
+
+.highlight {
+    background-color: rgb(255, 0, 0, 0.7);
+}
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 10002;
+    background-color: rgb(222, 98, 54, 0.9);
+}
+
+.toast-body {
+    font-size: 18px;
+}
+
+.modal-backdrop.show {
+    opacity: 0 !important;
+}
+  
+@media (min-width: 768px) and (max-width: 992px) { 
+    .card {
+        margin: 0 .1em;
+    }
+    .card li {
+        font-size: 13px;
+    }
+    .card-body {
+        padding: 10px;
+        padding-left: 11px;
+    }
+    .card ul {
+        list-style: none;
+        padding: 5px 2px;
+    }
+    .card-image {
+        max-width: 100%;
+        height: 10em;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .reg-form {
+        width: 70vmin;
+    }
+    .reg-form input {
+        height: 1.8em;
+    }
+}
+
+@media (max-width: 992px) {
+    #izmena-agencije .card-body {
+        padding: 16px 8px;
+    }
+
+    .navbar-collapse {
+        padding-bottom: 10px;
+    }
+
+    .navbar ul {
+        align-items: center !important;
+    }
+
+    .navbar .login {
+        width: 100%;
+    }
+
+    .dropdown-toggle > a::after{
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 767px) {
+    #izmena-agencije .container {
+        width: 80%;
+        padding: 0 !important;
+    }
+    #izmena-agencije .container .card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #izmena-agencije table {
+        font-size: 0.8em;
+        line-height: normal;
+        word-break: break-all;
+    }
+    #izmena-agencije .card-text .boja{
+        color: white;
+        text-shadow: 1px 1px 1px #474747;
+    }
+
+    .reg-form {
+        width: 80vmin;
+    }
+    .reg-form input {
+        height: 1.6em;
+    }
+    .login-form {
+        width: 80vmin;
+    }
+
+    .dobrodosli h1{
+        font-size: 3rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .tableAgPadding {
+        padding-right: 1px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    form[role="search"] {
+        width: 70% !important;
+    }
+
+    .card-body {
+        padding: 16px 0.8em;
+    }
+
+}
+@media (max-width: 420px) {
+    .buttons {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px !important;
+    }
+    .izmena-h1 {
+        font-size: 2.2rem;
+    }
+
+    #izmena-agencije .card-body {
+        padding-bottom: 5px !important;
+    }
+
+}
+@media (max-width: 360px) {
+
+    .card {
+        margin: 0;
+    }
+
+    .card-image {
+        height: 10rem;
+    }
+
+    .dobrodosli h1{
+        font-size: 2em;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+@media (min-width: 390px) and (max-width: 415px) and (max-height: 920px) {
+    .overflow {
+        height: 500px;
+    }
+}
+
+@media (max-width: 820px) and (min-height: 920px) {
+    .overflow {
+        height: 600px;
+    }
+}
+@media (min-width: 820px) and (min-height: 920px) {
+    .overflow {
+        height: 880px;
+    }
+    
+}
+
+@media (min-height: 1300px) {
+    .deleteEditTd {
+        padding-left: 1em;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 600px) and (min-height: 700px) {
+    .dobrodosli h1{
+        font-size: 4em;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    #header-img {
+        max-height: 200px;
+        min-width: 100% !important;
+    }
+}

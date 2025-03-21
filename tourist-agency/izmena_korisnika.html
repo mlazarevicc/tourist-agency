@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TraveLand</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/korisnici.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div id="loginForm" class="login-bg h-100">
+
+      <form class="p-4 bg-light rounded login-form">
+       <h2 class="text-center mb-4">Login</h2>
+       <div class="mb-3">
+         <label for="loginUsername" class="form-label">Username</label>
+         <input type="text" class="form-control" id="loginUsername" name="loginUsername" placeholder="Enter your username">
+       </div>
+       <div class="mb-3">
+         <label for="loginPassword" class="form-label">Password</label>
+         <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Enter your password">
+         <span id="invalid-login" class="error-message">Korisnik ne postoji</span>
+       </div>
+       <button id="loginSubmitButton" type="button" class="btn mt-3 submit-button">Submit</button>
+ 
+       <div class="text-center mb-0 mt-3">
+         <p class="m-0">Not a member? <a id='register-button' href="#!" class="reg-text">Register</a></p>
+       </div>
+ 
+       <button id="close-button" class="position-absolute top-0 end-0 close-button"><i class='bx bx-x'></i></button>
+     </form>
+   
+    <!-- Registration Form -->
+   <form id="reg-form" class="m-2 p-4 bg-light rounded reg-form">
+     <h2 class="text-center m-0 mb-1">Create account</h2>
+     <div>
+       <label for="usernameInput" class="form-label">Username</label>
+       <input type="text" class="form-control" id="usernameInput" name="usernameInput" pattern="^\S+$" placeholder="myUsername21" minlength="3">
+       <span id="username-error" class="error-message">Invalid username</span>
+       <span id="username-taken" class="error-message">Zauzeto korisnicko ime</span>
+     </div>
+     <div class="row">
+       <div class="col-6 pe-1">
+         <label for="passwordInput" class="form-label">Password</label>
+         <input type="password" class="form-control" id="passwordInput" name="passwordInput" placeholder="password" pattern="^(?=.*[a-zA-Z])(?=.*\d).+$" minlength="5" title="Lozinka mora sadržati barem jedno slovo, jedan broj i biti minimalno 5 znakova dugačka.">
+         <span id="password-error" class="error-message">Invalid password</span>
+       </div>
+       <div class="col-6 ps-1">
+         <label for="passwordInputConf" class="form-label">ConfPassword</label>
+         <input type="password" class="form-control" id="confpasswordInput" name="confpasswordInput" placeholder="password">
+         <span id="confPassword-error" class="error-message">Invalid confirm password</span>
+       </div>
+     </div>
+     <hr class="mx-0 my-3">
+     <div class="row">
+       <div class="col-6 pe-1">
+         <label for="firstNameInput" class="form-label">First Name</label>
+         <input type="text" class="form-control" id="firstNameInput" name="firstNameInput" placeholder="Milan">
+         <span id="firstName-error" class="error-message">Invalid first name</span>
+       </div>
+       <div class="col-6 ps-1">
+         <label for="lastNameInput" class="form-label">Last Name</label>
+         <input type="text" class="form-control" id="lastNameInput" name="lastNameInput" placeholder="Lazarević" >
+         <span id="lastName-error" class="error-message">Inavlid last name</span>
+       </div>
+     </div>
+     <div>
+       <label for="emailInput" class="form-label">Email</label>
+       <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="my.email21@uns.ac.rs" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+       <span id="email-error" class="error-message">Inavlid email</span>
+     </div>
+     <div class="row">
+       <div class="col-6 pe-1">
+         <label for="regDate" class="form-label">Date of Birth</label>
+         <input type="date" class="form-control" name="dobInput" id="dateofbirth" required>
+         <span id="dob-error" class="error-message">Invalid date</span>
+       </div>
+       <div class="col-6 ps-1">
+         <label for="phoneInput" class="form-label">Phone Number</label>
+         <input type="tel" class="form-control" id="phoneInput" name="phoneInput" placeholder="0625422985" pattern="[0-9]{8,}">
+         <span id="phone-error" class="error-message">Invalid phone number</span>
+       </div>
+     </div>
+     <div>
+       <label for="addressInput" class="form-label">Address</label>
+       <input type="text" class="form-control" id="addressInput" name="addressInput" placeholder="Bulevar Patrijarha Pavla 32" pattern="^(?=.*\p{L})(?=.*\d)[\p{L}\d\s\-,\/]+$" minlength="5">
+       <span id="address-error" class="error-message">Invalid address</span>
+     </div>
+     <button id="regSubmitButton" type="submit" class="btn mt-3 submit-button">Registration</button>
+     <button id="editSubmitButton" type="submit" class="btn mt-3 submit-button">Izmeni</button>
+     <span id="submit-error" class="error-message" style="text-align: center;">Unesite sve validne podatke</span>
+ 
+     <button id="close-reg-button" class="position-absolute top-0 end-0 close-button"><i class='bx bx-x'></i></button>
+   </form>
+   </div>
+
+   <div class="toast text-white" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body text-center">
+      <h5 class="mb-3">Obaveštenje</h5>
+      <p class="mb-0">Proces prošao uspešno!</p>
+    </div>
+  </div>
+   <!-- SUCCESS LOGIN -->
+   <div class="modal fade modal-save" id="modal3" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Uspešno ste se ulogovali!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Dobrodošli! Uspešno ste se ulogovali na našu platformu.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn orange-color" data-bs-dismiss="modal">Zatvori</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fixed-top">
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid dark">
+        <a class="navbar-brand" href="#">TraveLand</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Početna strana</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#turisticke_agencije">Turističke agencije</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Administrator
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="izmena_agencije.html">Izmena turističke agencije</a></li>
+                <li><a class="dropdown-item" href="izmena_korisnika.html">Izmena korisnika</a></li>
+                <li><a class="dropdown-item" href="izmena_destinacija.html">Izmena destinacija</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <a href="#" id="login-button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3 login">Log in</a>
+        </div>
+      </div>
+    </nav>
+    </div>
+
+    <div class="container-fluid px-3 px-md-5 mt-3">
+      <h1 class="izmena-h1 mb-4">IZMENA KORISNIKA</h1>
+      <div class="table-responsive w-100 overflow-users">
+        <table class="table border table-striped">
+            <thead class="table-dark sticky-top">
+                <tr>
+                    <th>Korisnicko ime</th>
+                    <th>Lozinka</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Email</th>
+                    <th>Datum rodjenja</th>
+                    <th>Adresa</th>
+                    <th>Telefon</th>
+                    <th>Akcija</th>
+                </tr>
+            </thead>
+            <tbody id="allUsers">
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal 2 - delete -->
+  <div class="modal fade modal-delete" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Brisanje agencije</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Da li ste sigurni da želite izbrisati korisnika?
+        </div>
+        <div class="modal-footer">
+          <button id='modal-close-del' type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id='modal-save-del' type="submit" class="btn btn-danger">Izbriši</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT -->
+   <div id="izmena-korisnika-popup" class="login-bg"></div>
+
+<!-- FOOTER -->
+<footer class="text-white text-center text-md-start footer-bg">
+  <div class="container">
+    <div class="row p-4">
+      <div class="col-md-6 text-center align-items-center">
+        <img src="img/Fakultet_tehnickih_nauka_-_Novi_Sad-logo-C11C616640-seeklogo.com.png" alt="FTN">
+      </div>
+      <div class="col-md-6 text-center p-3">
+          Credits: Milan Lazarević <br>
+          Fakultet: Fakultet tehničkih nauka <br>
+          Smer: Softversko inženjerstvo i informacione tehnologije <br>
+          Predmet: Web dizajn <br>
+          Email: milan.lazarevic03@gmail.com <br>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <script src="js/korisnici.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

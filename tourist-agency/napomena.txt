@@ -1,0 +1,2 @@
+1. Search (isticanje pojma po kom se pretražuje) - implementirano za pretragu po nazivu.
+2. Dodavanje i brisanje destinacija u agenciji - za brisanje selektovati u dropdown-u agenciju nakon cega stisnuti dugme za brisanje

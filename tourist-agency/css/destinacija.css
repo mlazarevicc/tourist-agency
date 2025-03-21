@@ -1,0 +1,39 @@
+/* DESTINACIJA */
+
+.destinacija h2 {
+    font-size: 6vmax;
+}
+
+.destinacija th {
+    text-align: right;
+}
+
+.linija {
+    background-color: var(--site-color);
+    height: 4px;
+}
+
+.footer-bg {
+    background-color: rgb(76, 93, 133, 0.8);
+}
+
+@media (max-width: 360px) {
+    .destinacija *{
+        font-size: 0.9em;
+    } 
+    .destinacija table {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+}
+@media (max-width: 992px) {
+
+    #dest-table {
+        height: 9rem !important;
+    }
+
+    .destinacija td {
+        padding-right: 3vmin;
+    }
+
+}
